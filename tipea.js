@@ -5,6 +5,9 @@ document.getElementById("score").innerHTML = score;
 var inputPalabra = document.getElementById("inputPalabra");
 inputPalabra.focus();
 var mensaje = document.getElementById("mensaje");
+var tiempo = document.getElementById("tiempo");
+var cuentaRegresiva = 5;
+tiempo.innerHTML = cuentaRegresiva;
 
 var crearPalabra = function(){
 	var palabra = '';
@@ -16,11 +19,27 @@ var crearPalabra = function(){
 
 crearPalabra();
 
+var actualizarTiempo = function(){
+	cuentaRegresiva -= 1;
+	if(cuentaRegresiva == 0){
+		mensaje.innerHTML = "Perdiste :(";
+		mensaje.style.color = "red";
+		mensaje.style.fontSize = "xx-large";
+		clearInterval(tiempoInterval);
+	}
+	tiempo.innerHTML = cuentaRegresiva;
+}
+
+var tiempoInterval = setInterval(function(){actualizarTiempo();}, 1000);
+
 var compara = function(){
-	if(inputPalabra.value.length == dificultad){
+	if(cuentaRegresiva != 0){
+		if(inputPalabra.value.length == dificultad){
 		if(inputPalabra.value == palabra.innerHTML){
 			mensaje.innerHTML = "Bien!";
+			mensaje.style.color = "green";
 			score += 1;
+			cuentaRegresiva = 5;
 			document.getElementById("score").innerHTML = score;
 			crearPalabra();
 			inputPalabra.value = '';
@@ -28,13 +47,16 @@ var compara = function(){
 		}
 		else{
 			mensaje.innerHTML = "Mal";
+			mensaje.style.color = "red";
 			inputPalabra.value = '';
 			inputPalabra.focus();
 		}
-	}
-	else{
-		mensaje.innerHTML = "Mal";
-		inputPalabra.value = '';
-		inputPalabra.focus();
+		}
+		else{
+			mensaje.innerHTML = "Mal";
+			mensaje.style.color = "red";
+			inputPalabra.value = '';
+			inputPalabra.focus();
+		}
 	}
 }
