@@ -1,14 +1,20 @@
 <html>
 <head>
-  <title>Tipea la palabra</title>
+<meta charset="UTF-8">
+<title>Tipeá la palabra</title>
 </head>
 <body>
-<h1>Tipea la palabra</h1>
+<h1>Tipeá la palabra</h1>
 <h2>Palabra: <span id="palabra"></span></h2>
 <input type="text" id="inputPalabra" onkeyup="compara()"/>
-<p id="score"></p>
+<p>Puntos: <span id="score"></span></p>
 <p id="mensaje"></p>
-<p id="tiempo"></p>
+<p>Tiempo: <span id="tiempo"></span></p>
+<div id="comojugar">
+<p>Tipeá la palabra que figura (digamos, eso que aparece donde dice "Palabra:"). Si lo ponés bien sumás un punto y aparece otra para seguir jugando...</p>
+<p><strong>Tenés 5 segundos para tipear la palabra, si no GAME OVER</strong></p>
+<p>(Si querés jugar de nuevo apretá F5)</p>
+</div>
 <script src="tipea.js"></script>
 </body>
 </html>
