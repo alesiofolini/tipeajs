@@ -22,8 +22,28 @@ crearPalabra();
 var actualizarTiempo = function(){
 	cuentaRegresiva -= 1;
 	if(cuentaRegresiva == 0){
-		mensaje.innerHTML = "Perdiste :(";
-		mensaje.style.color = "red";
+		if(score<=5){
+			mensaje.innerHTML = "Seguí participando";
+		}
+		else if(score<=10){
+			mensaje.innerHTML = "Podés hacerlo mejor";
+		}
+		else if(score<=15){
+			mensaje.innerHTML = "Muy bien! Seguí practicando!";
+		}
+		else if(score<=20){
+			mensaje.innerHTML = "Tremendoooooo!!!";
+		}
+		else if(score<=25){
+			mensaje.innerHTML = "C R A C K!";
+		}
+		else if(score<=30){
+			mensaje.innerHTML = "Sos el Dios de las palabras!";
+		}
+		else if(score>30){
+			mensaje.innerHTML = "DE QUÉ PLANETA VINISTEEEEE?!?!?!?";
+		}
+		mensaje.style.color = "green";
 		mensaje.style.fontSize = "xx-large";
 		clearInterval(tiempoInterval);
 	}
