@@ -49,7 +49,7 @@ var actualizarTiempo = function(){
 		else if(score>40){
 			mensaje.innerHTML = "El Messi de las letras! Es solo gatorei!!!";
 		}
-		mensaje.style.color = "green";
+		mensaje.style.color = "orange";
 		mensaje.style.fontSize = "xx-large";
 		clearInterval(tiempoInterval);
 	}
