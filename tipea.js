@@ -55,7 +55,7 @@ var compara = function(){
 			inputPalabra.focus();
 		}
 		}
-		else{
+		else if(inputPalabra.value.length > dificultad){
 			mensaje.innerHTML = "Mal";
 			mensaje.style.color = "red";
 			inputPalabra.value = '';
