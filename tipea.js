@@ -39,6 +39,9 @@ var compara = function(){
 			mensaje.innerHTML = "Bien!";
 			mensaje.style.color = "green";
 			score += 1;
+			if(score % 5 == 0){
+				dificultad += 2;
+			};
 			cuentaRegresiva = 5;
 			document.getElementById("score").innerHTML = score;
 			crearPalabra();
