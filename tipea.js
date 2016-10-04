@@ -40,8 +40,14 @@ var actualizarTiempo = function(){
 		else if(score<=30){
 			mensaje.innerHTML = "Sos el Dios de las palabras!";
 		}
-		else if(score>30){
+		else if(score<=35){
 			mensaje.innerHTML = "DE QUÉ PLANETA VINISTEEEEE?!?!?!?";
+		}
+		else if(score<=40){
+			mensaje.innerHTML = "Ah nooooooooooooooooooo!!! Corramos!!! Sos Skynet!!!";
+		}
+		else if(score>40){
+			mensaje.innerHTML = "El Messi de las letras! Es solo gatorei!!!";
 		}
 		mensaje.style.color = "green";
 		mensaje.style.fontSize = "xx-large";
