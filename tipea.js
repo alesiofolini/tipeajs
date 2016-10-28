@@ -51,6 +51,8 @@ var actualizarTiempo = function(){
 		}
 		mensaje.style.color = "orange";
 		mensaje.style.fontSize = "xx-large";
+		document.getElementById("score").style.color = "green";
+		document.getElementById("score").style.fontSize = "xx-large";
 		clearInterval(tiempoInterval);
 	}
 	tiempo.innerHTML = cuentaRegresiva;
